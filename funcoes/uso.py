@@ -12,7 +12,6 @@ def gerar_sequencias():
     sequencias = []
     for i in range(10):
         operacao = random.randint(0, 8)
-
         if(operacao == 0): #Soma
             x = random.randint(0, 100)
             saveX = x
@@ -30,9 +29,9 @@ def gerar_sequencias():
         if(operacao == 1): #Subtracao
             x = 1
             y = 1
-            while(x < 3 * y):
+            while(x < 2 * y):
                 x = random.randint(0, 100)
-                y = random.randint(0, 100)
+                y = random.randint(0, 50)
             lista = []
             saveX = x
             for i in range(3):
@@ -57,7 +56,7 @@ def gerar_sequencias():
             sequencias.append(lista)
 
         if(operacao == 3): #Potência
-            x = random.randint(0, 5)
+            x = random.randint(0, 4)
             y = random.randint(0, 2)
             lista = []
             saveX = x
@@ -87,7 +86,7 @@ def gerar_sequencias():
             y = 1
             while(x < y):
                 x = random.randint(0, 100)
-                y = random.randint(0, 100)
+                y = random.randint(1, 100)
             lista = []
             saveY = y
             for i in range(3):
@@ -103,7 +102,7 @@ def gerar_sequencias():
             y = 1
             while(x < y):
                 x = random.randint(0, 100)
-                y = random.randint(0, 100)
+                y = random.randint(1, 100)
             lista = []
             saveY = y
             for i in range(3):
@@ -133,7 +132,7 @@ def gerar_sequencias():
             y = 1
             while(x < y):
                 x = random.randint(0, 100)
-                y = random.randint(0, 100)
+                y = random.randint(1, 100)
             lista = []
             saveY = y
             for i in range(3):
@@ -143,7 +142,7 @@ def gerar_sequencias():
             lista.append(x)
             lista.append(saveY)
             sequencias.append(lista)
-    
+
     return sequencias
 
 def questoes(sequencias, player):

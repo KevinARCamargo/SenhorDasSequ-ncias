@@ -45,6 +45,8 @@ def div_chao(dividendo, divisor):
         return 1 + div_chao(subt(dividendo, divisor), divisor)
 
 def div_teto(dividendo, divisor):
+    if divisor > dividendo:
+        return 0
     if dividendo < divisor:
         return 1
     else:
