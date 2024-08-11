@@ -146,10 +146,29 @@ def gerar_sequencias():
     return sequencias
 
 def exibir_sequencias(sequencias):
-    print("\n\n ***** SEQUÊNCIAS UTILIZADAS NO JOGO *****\n")
-    for i, seq in enumerate(sequencias):
-        print(f"Sequência {i+1}: {seq}")
-    input("\nPressione Enter para finalizar...")
+    limpar_terminal()
+    print("\n ***** SEQUÊNCIAS DA PARTIDA *****\n")
+    for elemento in sequencias:
+        if elemento[3] == 'a':
+            resposta = 'Soma'
+        elif elemento[3] == 'b':
+            resposta = 'Subtração'
+        elif elemento[3] == 'c':
+            resposta = 'multiplicação'
+        elif elemento[3] == 'd':
+            resposta = 'Potencia'
+        elif elemento[3] == 'e':
+            resposta = 'Fatorial'
+        elif elemento[3] == 'f':
+            resposta = 'Div Chão'
+        elif elemento[3] == 'g':
+            resposta = 'Div Teto'
+        elif elemento[3] == 'h':
+            resposta = 'Percentual'
+        else:
+            resposta = 'Resto'
+        print(f" {elemento[0]} -> {elemento[1]} -> {elemento[2]} - Resposta: {resposta} - {elemento[4]} e {elemento[5]}")
+    input()
 
 def questoes(sequencias, player):
     for elemento in sequencias:
@@ -164,6 +183,7 @@ def questoes(sequencias, player):
     input("\n\n                                                                       Pressione enter para continuar")
 
 def rank(player1, player2, player3 = None):
+    limpar_terminal()
     senhor = []
     print("\n ***** RANKING *****\n")
 
@@ -223,7 +243,7 @@ def rank(player1, player2, player3 = None):
                 senhor.append(player1)
     input()
     limpar_terminal()
-    if senhor[0].pontos > senhor[1].pontos and senhor[0].pontos >= 7:
+    if senhor[0].pontos > senhor[1].pontos and senhor[0].pontos >= 3:
         print(f"\n\n                                                  Parabéns {senhor[0].nome} você se provou digno do título de ...")
         print("\n                                                                      SENHOR DAS SEQUÊNCIAS")
     elif senhor[0].pontos > senhor[1].pontos:
