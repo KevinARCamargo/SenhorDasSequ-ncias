@@ -10,7 +10,7 @@ def limpar_terminal():
 
 def gerar_sequencias():
     sequencias = []
-    for i in range(10):
+    for i in range(5):
         operacao = random.randint(0, 8)
         if(operacao == 0): #Soma
             x = random.randint(0, 100)
@@ -145,6 +145,12 @@ def gerar_sequencias():
 
     return sequencias
 
+def exibir_sequencias(sequencias):
+    print("\n\n ***** SEQUÊNCIAS UTILIZADAS NO JOGO *****\n")
+    for i, seq in enumerate(sequencias):
+        print(f"Sequência {i+1}: {seq}")
+    input("\nPressione Enter para finalizar...")
+
 def questoes(sequencias, player):
     for elemento in sequencias:
         limpar_terminal()
@@ -225,7 +231,7 @@ def rank(player1, player2, player3 = None):
         print("\n                                                                               SENHOR DAS SEQUÊNCIAS")
     else:
         print("\n\n                                                      Infelizmente tivemos um empate, será necessária uma nova partida")
-        
+    
     input()
 
 def start(player1, player2, sequencias, player3 = None):

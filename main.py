@@ -50,8 +50,8 @@ while(execucao == True):
             player2 = Usuario(n2, 0)
             player3 = Usuario(n3, 0)
             limpar_terminal()
-            sequencias = gerar_sequencias()
             start(player1,player2, sequencias, player3)
+            exibir_sequencias(sequencias)  # Exibir as sequências ao final do jogo
             rank(player1,player2, player3)
         else:
             limpar_terminal()
@@ -59,3 +59,6 @@ while(execucao == True):
 
     else:
         execucao = False
+
+sequencias = gerar_sequencias()
+input()

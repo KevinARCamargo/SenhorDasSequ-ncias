@@ -40,8 +40,10 @@ regrasSeq = """                                                                 
  o segundo e terceiro são resultantes da divisão de Y+1 e Y+2 
  Ex: (X = 10, Y = 3) 4 (10/3) -> 3 (10/4) -> 2(10/5)
 
- PERCENTUAL: O primeiro elemento é gerado aleatóriamente, o segundo e terceiro são resultantes de um percentual de X gerado aleatóriamente 
+ PERCENTUAL: O primeiro elemento  é gerado aleatóriamente, o segundo e terceiro são resultantes de um percentual de X gerado aleatóriamente,
+ (A parte fracionária não será exibida, somente a inteira)
  Ex: (X = 100) 100 -> 40 (40% de 100) -> 65 (65% de 100)
+ Ex: (X = 101) 101 -> 10 (10% de 101) -> 10 (não 10,1)
 
  RESTO DE DIVISÂO: O primeiro elemento é a resto da divisão inteira (arredondada para baixo) de um inteiro X dividido por um inteiro Y ambos gerados aleatóriamente,
  o segundo e terceiro são restos da divisão inteira de Y+1 e Y+2 
@@ -56,6 +58,6 @@ respostas = """\n a) Adição
  e) Fatorial
  f) Div Chão
  g) Div Teto
- h) Percentual
+ h) Percentual (Parte Inteira)
  i) Resto de Divisão
 """
