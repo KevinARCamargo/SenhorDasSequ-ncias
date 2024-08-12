@@ -61,3 +61,22 @@ def resto(x, y):
         return x
     else:
         return resto(subt(x, y), y)
+    
+def maximo(x, y):
+    if subt(x, y) >= 0:
+        return x
+    else:
+        return y
+
+def minimo(x, y):
+    if subt(x, y) <= 0:
+        return x
+    else:
+        return y
+    
+def igual(x, y):
+    return subt(x, y) == 0
+
+def diferente(x, y):
+    return subt(x, y) != 0
+

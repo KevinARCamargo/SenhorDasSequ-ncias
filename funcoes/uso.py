@@ -186,7 +186,7 @@ def rank(player1, player2, player3 = None):
 
     if player3 == None:
 
-        if player1.pontos >= player2.pontos:
+        if maximo(player1.pontos, player2.pontos) == player1.pontos:
             print(player1)
             print(player2)
             senhor.append(player1)
