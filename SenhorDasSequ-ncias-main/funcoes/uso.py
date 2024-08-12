@@ -151,17 +151,34 @@ def exibir_sequencias(sequencias):
         print(f"Sequência {i+1}: {seq}")
     input("\nPressione Enter para finalizar...")
 
-def questoes(sequencias, player):
+def questoes(sequencias, player1, player2, player3=None):
     for elemento in sequencias:
         limpar_terminal()
-        print(f"\n DICA: {elemento[4]} e {elemento[5]}\n\n")
+        print(f"\n DICA: {elemento[4]} e {elemento[5]}\n")
         print(f" Elementos: {elemento[0]} - {elemento[1]} - {elemento[2]}")
         print(respostas)
-        resposta = input("\n\n Qual a operação geradora: ")
-        if resposta == elemento[3]:
-            player.setPontos()
-    limpar_terminal()
-    input("\n\n                                                                       Pressione enter para continuar")
+        
+        # Jogador 1 responde
+        resposta1 = input(f"\n\n {player1.nome}, qual a operação geradora: ")
+        if resposta1 == elemento[3]:
+            player1.setPontos()
+        
+        # Jogador 2 responde
+        resposta2 = input(f"\n\n {player2.nome}, qual a operação geradora: ")
+        if resposta2 == elemento[3]:
+            player2.setPontos()
+
+        # Se houver um terceiro jogador
+        if player3:
+            resposta3 = input(f"\n\n {player3.nome}, qual a operação geradora: ")
+            if resposta3 == elemento[3]:
+                player3.setPontos()
+        
+        # Mostra a resposta correta
+        print(f"\n A resposta correta era: {elemento[3]}\n")
+        input("Pressione Enter para continuar...")
+        limpar_terminal()
+
 
 def rank(player1, player2, player3 = None):
     senhor = []
@@ -234,16 +251,14 @@ def rank(player1, player2, player3 = None):
     
     input()
 
-def start(player1, player2, sequencias, player3 = None):
+    
+
+def start(player1, player2, sequencias, player3=None):
     print("\n\n                                                                                  START ")
     input("")
     limpar_terminal()
     if player3 == None:
-        questoes(sequencias, player1)
-        questoes(sequencias, player2)
+        questoes(sequencias, player1, player2)
     else:
-        print(player3)
-        questoes(sequencias, player1)
-        questoes(sequencias, player2)
-        questoes(sequencias, player3)
+        questoes(sequencias, player1, player2, player3)
     limpar_terminal()
